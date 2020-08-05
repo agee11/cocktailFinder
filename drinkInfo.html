@@ -3,19 +3,40 @@
   <head>
     <meta charset="utf-8">
     <title>Cocktails</title>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/9916e95c65.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    <img id="drink-display" alt="drink"/>
-    <h1 id="drink-name"></h1>
-    <p id="alc-content"><strong>Alchohol Content:</strong></p>
-    <p id="glass-content"><strong>Glass Container:</strong></p>
+    <div class="drink-container">
+      <div>
+        <img id="drink-display" class="drink-img" alt="drink"/>
+      </div>
+      <div class="info-container">
+        <h1 id="drink-name"></h1>
+        <p id="alc-content"><strong>Alchohol Content:</strong> </p>
+        <p id="glass-content"><strong>Glass Container:</strong> </p>
+      </div>
+    </div>
+    <div class="ingredient-container">
+      <div class="one-line">
+        <div class="hr-line"></div><div class="hr-icon fas fa-blender fa-2x"></div>
+      </div>
 
-    <h3 class="section-titles">Ingredients</h3>
-    <ul id="ingredient-list">
-    </ul>
-    <h3 class="section-titles">Instructions</h3>
-    <ol id="instructions-list">
-    </ol>
+      <h3 class="section-titles">Ingredients</h3>
+      <ul id="ingredient-list">
+      </ul>
+    </div>
+    <div class="instructions-container">
+      <div class="one-line">
+        <div class="hr-line"></div><div class="hr-icon fas fa-cocktail fa-2x"></div>
+      </div>
+      <h3 class="section-titles">Instructions</h3>
+      <ol id="instructions-list">
+      </ol>
+    </div>
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script type="text/javascript" src="./drinkInfo.js">

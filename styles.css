@@ -1,4 +1,88 @@
+body{
+  margin: 20px 15% 0 15%;
+  background-color: #0d1110;
+  color: #93806e;
+  font-family: 'Ubuntu', sans-serif;
+
+}
+
+.home-container{
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+}
+
+.home-buttons{
+  border-radius: 50%;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+}
+.home-buttons .btn{
+  margin: 5px
+}
+
+##additional-ingredient{
+  display: flex;
+  flex-direction: column;
+}
+
 .preview-img{
   height: 100px;
   width: 100px;
+  border-color: #8c5c43;
+  border-width: 5px;
+  border-style: ridge;
+  margin: 0 10px 0 0;
+  border-radius: 10px;
+}
+
+.drink-item {
+  border-color: #8c5c43;
+  border-width: 5px;
+  border-style: ridge;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.drink-container{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.drink-img{
+  height: 300px;
+  width: 300px;
+  border-color: #8c5c43;
+  border-width: 5px;
+  border-style: ridge;
+}
+
+.info-container{
+  margin: 10px;
+}
+
+.hr-icon{
+  position: relative;
+  margin: 0 10px;
+  top: 15px;
+  color: #d0cec1;
+}
+
+.hr-line {
+  width: 100%;
+  border-bottom-style: solid;
+  border-radius: 0%;
+  border-color: #d0cec1;
+  position: relative;
+}
+
+.one-line {
+  display: flex;
 }
