@@ -16,6 +16,7 @@ function findRecipes(ingredient){
 			console.log(data);
 			let list = document.createElement("div");
 			list.setAttribute("id", "drinkList");
+			list.setAttribute("class", "page-container")
 			data.drinks.forEach(drink => {
 				let item = document.createElement("div");
 				item.setAttribute("class", "drink-item")

@@ -3,38 +3,46 @@
   <head>
     <meta charset="utf-8">
     <title>Cocktails</title>
-<link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9916e95c65.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    <div class="drink-container">
-      <div>
-        <img id="drink-display" class="drink-img" alt="drink"/>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="index.html">Drink Finder</a>
+      <div class="navbar-nav">
+        <button class="nav-item" onclick="window.history.back()">Back</button>
       </div>
-      <div class="info-container">
-        <h1 id="drink-name"></h1>
-        <p id="alc-content"><strong>Alchohol Content:</strong> </p>
-        <p id="glass-content"><strong>Glass Container:</strong> </p>
+    </nav>
+    <div class="page-container">
+      <div class="drink-container">
+        <div>
+          <img id="drink-display" class="drink-img" alt="drink"/>
+        </div>
+        <div class="info-container">
+          <h1 id="drink-name"></h1>
+          <p id="alc-content"><strong>Alchohol Content:</strong> </p>
+          <p id="glass-content"><strong>Glass Container:</strong> </p>
+        </div>
       </div>
-    </div>
-    <div class="ingredient-container">
-      <div class="one-line">
-        <div class="hr-line"></div><div class="hr-icon fas fa-blender fa-2x"></div>
-      </div>
+      <div class="ingredient-container">
+        <div class="one-line">
+          <div class="hr-line"></div><div class="hr-icon fas fa-blender fa-2x"></div>
+        </div>
 
-      <h3 class="section-titles">Ingredients</h3>
-      <ul id="ingredient-list">
-      </ul>
-    </div>
-    <div class="instructions-container">
-      <div class="one-line">
-        <div class="hr-line"></div><div class="hr-icon fas fa-cocktail fa-2x"></div>
+        <h3 class="section-titles">Ingredients</h3>
+        <ul id="ingredient-list">
+        </ul>
       </div>
-      <h3 class="section-titles">Instructions</h3>
-      <ol id="instructions-list">
-      </ol>
+      <div class="instructions-container">
+        <div class="one-line">
+          <div class="hr-line"></div><div class="hr-icon fas fa-cocktail fa-2x"></div>
+        </div>
+        <h3 class="section-titles">Instructions</h3>
+        <ol id="instructions-list">
+        </ol>
+      </div>
     </div>
 
 

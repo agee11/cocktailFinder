@@ -7,14 +7,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
   </head>
+  <header>
+  </header>
   <body id="root">
-    <div class="home-container">
+    <div class="home-container page-container">
       <h1 class="home-title">Drink Finder</h1>
-      <form class="home-form" name="ingredientInput1" action="" onsubmit="return false" method="post">
+      <form class="home-form" name="ingredientInput1" action="" onsubmit="return findRecipes()" method="post">
         <div id="ingredient-inputs" class="input-group home-ingredient-input">
-          <input class="form-control" type="text" name="ingredient1" placeholder="Ingredient">
+          <input class="form-control" type="text" name="ingredient1" placeholder="Ingredient" required>
           <div class="input-group-append">
-            <button class="btn btn-primary" type="button" name="button" onclick="addInput()">Add</button>
+            <button class="btn btn-primary" type="submit" name="button" >Search</button>
           </div>
         </div>
         <div id="additional-ingredient">
@@ -22,7 +24,7 @@
         </div>
 
         <div class="home-buttons">
-          <button class="btn btn-primary" type="button" name="button" onclick="findRecipes()">Search</button>
+          <button class="btn btn-primary" type="button" name="button" onclick="addInput()">Add</button>
           <button class="btn btn-primary" type="button" name="button" onclick="findRandom()">Feeling Lucky?</button>
         </div>
       </form>
