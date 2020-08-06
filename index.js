@@ -35,3 +35,24 @@ function removeIngredient(name){
 	let element = document.getElementById(name);
 	element.parentNode.removeChild(element);
 }
+
+function findRandom(){
+		fetch("https://the-cocktail-db.p.rapidapi.com/random.php", {
+		"method": "GET",
+		"headers": {
+			"x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
+			"x-rapidapi-key": "2d05695c28mshf1d5b898c97b994p16ad16jsnf88b07a75603"
+		}
+	})
+	.then(response => {
+		response.body.getReader().read().then(res => {
+			const data = JSON.parse(String.fromCharCode.apply(null, res.value));
+			console.log(data);
+			const drinkInfo = data.drinks[0];
+			window.location.href = "drinkInfo.html"+"?drinkId="+drinkInfo.idDrink;
+		})
+	})
+	.catch(err => {
+		console.log(err);
+	});
+}
