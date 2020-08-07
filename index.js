@@ -59,7 +59,28 @@ function findRandom(){
 	});
 }
 
-var test = ["Mango", "Apple", "Orange"];
+
+var ingredientData = [];
+
+fetch("https://the-cocktail-db.p.rapidapi.com/list.php?i=list", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
+		"x-rapidapi-key": "2d05695c28mshf1d5b898c97b994p16ad16jsnf88b07a75603"
+	}
+})
+.then(response => {
+	response.body.getReader().read().then(res => {
+		const data = JSON.parse(String.fromCharCode.apply(null, res.value));
+		console.log(data);
+		data.drinks.forEach(item => {
+			ingredientData.push(item.strIngredient1);
+		})
+	})
+})
+.catch(err => {
+	console.log(err);
+});
 
 var substringMatcher = function(strs) {
   return function findMatches(q, cb) {
@@ -89,5 +110,5 @@ $(".form-control.typeahead").typeahead({
 	minLength: 1
 },{
 	name: "ingredients",
-	source: substringMatcher(test)
+	source: substringMatcher(ingredientData)
 });
