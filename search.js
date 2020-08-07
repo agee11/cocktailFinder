@@ -12,28 +12,34 @@ function findRecipes(ingredient){
 	})
 	.then(response => {
 		response.body.getReader().read().then(res => {
-			const data = JSON.parse(String.fromCharCode.apply(null, res.value));
-			console.log(data);
-			let list = document.createElement("div");
-			list.setAttribute("id", "drinkList");
-			list.setAttribute("class", "page-container")
-			data.drinks.forEach(drink => {
-				let item = document.createElement("div");
-				item.setAttribute("class", "drink-item")
-				let image = document.createElement("img");
-				image.setAttribute("src", drink.strDrinkThumb);
-				image.setAttribute("class", "preview-img");
-				image.setAttribute("onclick", "openDrinkInfo("+drink.idDrink+")");
-				image.setAttribute("id", drink.idDrink);
-				item.appendChild(image);
-				item.innerHTML += drink.strDrink;
-				list.appendChild(item);
-			})
-			document.body.appendChild(list);
+			if(res.value){
+				const data = JSON.parse(String.fromCharCode.apply(null, res.value));
+				let list = document.createElement("div");
+				list.setAttribute("id", "drinkList");
+				list.setAttribute("class", "page-container")
+				data.drinks.forEach(drink => {
+					let item = document.createElement("div");
+					item.setAttribute("class", "drink-item")
+					let image = document.createElement("img");
+					image.setAttribute("src", drink.strDrinkThumb);
+					image.setAttribute("class", "preview-img");
+					image.setAttribute("onclick", "openDrinkInfo("+drink.idDrink+")");
+					image.setAttribute("id", drink.idDrink);
+					item.appendChild(image);
+					item.innerHTML += drink.strDrink;
+					list.appendChild(item);
+				})
+				document.body.appendChild(list);
+			}else{
+				let container = document.getElementById("error-message");
+				container.setAttribute("class", "error");
+				container.innerHTML = "<i class='fas fa-exclamation-triangle fa-5x'></i><h1>Nothing Found</h1>";
+			}
 		})
 	})
 	.catch(err => {
 		console.log(err);
+
 	});
 	return false;
 
