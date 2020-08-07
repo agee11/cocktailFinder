@@ -14,7 +14,7 @@
       <h1 class="home-title">Drink Finder</h1>
       <form class="home-form" name="ingredientInput1" action="" onsubmit="return findRecipes()" method="post">
         <div id="ingredient-inputs" class="input-group home-ingredient-input">
-          <input class="form-control" type="text" name="ingredient1" placeholder="Ingredient" required>
+          <input class="form-control typeahead" type="text" name="ingredient1" placeholder="Ingredient" required>
           <div class="input-group-append">
             <button class="btn btn-primary" type="submit" name="button" >Search</button>
           </div>
@@ -30,7 +30,7 @@
       </form>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="index.js">
-    </script>
+    <script src="typeahead.jquery.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
