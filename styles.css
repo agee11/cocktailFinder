@@ -1,12 +1,9 @@
-header {
-  margin: 0;
-}
-body{
+body {
   background-color: #0d1110;
   font-family: 'Ubuntu', sans-serif;
 }
 
-.home-container{
+.home-container {
   height: 60vh;
   color: #93806e;
   display: flex;
@@ -15,18 +12,19 @@ body{
   align-items: center;
 }
 
-.home-title{
+.home-title {
   font-size: 40px;
 }
 
-.home-buttons{
+.home-buttons {
   border-radius: 50%;
   margin: 10px;
   display: flex;
   justify-content: center;
 }
 
-.tt-menu {    /* used to be tt-dropdown-menu in older versions */
+.tt-menu {
+  /* used to be tt-dropdown-menu in older versions */
   width: 100%;
   margin-top: 4px;
   padding: 4px 0;
@@ -34,8 +32,8 @@ body{
   background-color: #fff;
   border: 1px solid #ccc;
   -webkit-border-radius: 4px;
-     -moz-border-radius: 4px;
-          border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
 }
 
 .tt-suggestion {
@@ -43,25 +41,26 @@ body{
   line-height: 24px;
 }
 
-.tt-suggestion.tt-cursor,.tt-suggestion:hover {
+.tt-suggestion.tt-cursor, .tt-suggestion:hover {
   color: #fff;
   background-color: #0097cf;
 }
 
-.home-buttons .btn{
+.home-buttons .btn {
   margin: 5px
 }
 
-#additional-ingredient{
+#additional-ingredient {
   display: flex;
   flex-direction: column;
 }
 
-.page-container{
+.page-container {
   margin: 20px 15% 0 15%;
+  color: #93806e;
 }
 
-.preview-img{
+.preview-img {
   height: 100px;
   width: 100px;
   border-color: #8c5c43;
@@ -73,21 +72,32 @@ body{
 
 .drink-item {
   border-color: #8c5c43;
-  border-width: 5px;
-  border-style: ridge;
+  border-width: 3px;
   border-radius: 10px;
+  border-style: ridge;
   margin: 10px;
   padding: 10px;
   display: flex;
   align-items: center;
+  cursor: pointer;
+  transform-origin: bottom;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
 }
 
-.drink-container{
+.drink-item:hover {
+  animation-name: bounce;
+  animation-timing-function: linear;
+}
+
+.drink-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
-.drink-img{
+.drink-img {
   height: 300px;
   width: 300px;
   border-color: #8c5c43;
@@ -95,11 +105,26 @@ body{
   border-style: ridge;
 }
 
-.info-container{
-  margin: 10px;
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
-.hr-icon{
+.info-container {
+  margin: 10px;
+  color: #93806e;
+}
+
+.hr-icon {
   position: relative;
   margin: 0 10px;
   top: 15px;
@@ -118,7 +143,7 @@ body{
   display: flex;
 }
 
-.error{
+.error {
   height: 70vh;
   display: flex;
   flex-direction: column;

@@ -20,10 +20,11 @@ function findRecipes(ingredient){
 				data.drinks.forEach(drink => {
 					let item = document.createElement("div");
 					item.setAttribute("class", "drink-item")
+					item.setAttribute("onclick", "openDrinkInfo("+drink.idDrink+")");
+
 					let image = document.createElement("img");
 					image.setAttribute("src", drink.strDrinkThumb);
 					image.setAttribute("class", "preview-img");
-					image.setAttribute("onclick", "openDrinkInfo("+drink.idDrink+")");
 					image.setAttribute("id", drink.idDrink);
 					item.appendChild(image);
 					item.innerHTML += drink.strDrink;
