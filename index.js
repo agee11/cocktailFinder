@@ -1,11 +1,13 @@
 
 
-var i = 0;
+var i = 1;
 function findRecipes(event){
-	console.log("what");
-	let ingredient = document.forms["ingredientInput1"]["ingredient1"].value;
+	let ingredient = "";
+	document.getElementsByName("ingredient").forEach(item => ingredient += item.value + ",");
+	console.log(ingredient);
 
-	window.location.href = "search.html" + "?ingredient=" +ingredient;
+
+	window.location.href = "search.html" + "?ingredient=" + ingredient;
 	return false;
 }
 
@@ -17,7 +19,7 @@ function addInput(){
 	container.className = "input-group home-ingredient-input";
 	input.type = "text";
 	input.name = "ingredient";
-	input.className = "form-control";
+	input.className = "form-control typeahead";
 	input.placeholder = "Ingredient";
 	remove.className = "btn btn-danger";
 	remove.type = "button";
@@ -30,12 +32,13 @@ function addInput(){
 	container.append(appender);
 	$("#additional-ingredient").append(container);
 	i++;
+	applyAutoSuggest();
 }
 
 function removeIngredient(name){
-	console.log(name);
 	let element = document.getElementById(name);
 	element.parentNode.removeChild(element);
+	i--;
 }
 
 function findRandom(){
@@ -49,7 +52,6 @@ function findRandom(){
 	.then(response => {
 		response.body.getReader().read().then(res => {
 			const data = JSON.parse(String.fromCharCode.apply(null, res.value));
-			console.log(data);
 			const drinkInfo = data.drinks[0];
 			window.location.href = "drinkInfo.html"+"?drinkId="+drinkInfo.idDrink;
 		})
@@ -72,7 +74,6 @@ fetch("https://the-cocktail-db.p.rapidapi.com/list.php?i=list", {
 .then(response => {
 	response.body.getReader().read().then(res => {
 		const data = JSON.parse(String.fromCharCode.apply(null, res.value));
-		console.log(data);
 		data.drinks.forEach(item => {
 			ingredientData.push(item.strIngredient1);
 		})
@@ -104,11 +105,16 @@ var substringMatcher = function(strs) {
   };
 };
 
-$(".form-control.typeahead").typeahead({
-	hint: true,
-	highlight: true,
-	minLength: 1
-},{
-	name: "ingredients",
-	source: substringMatcher(ingredientData)
-});
+function applyAutoSuggest(){
+	$(".form-control.typeahead").typeahead("destroy");
+	$(".form-control.typeahead").typeahead({
+		hint: true,
+		highlight: true,
+		minLength: 1
+	},{
+		name: "ingredients",
+		source: substringMatcher(ingredientData)
+	});
+}
+
+window.onload = applyAutoSuggest();

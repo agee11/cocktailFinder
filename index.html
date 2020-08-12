@@ -11,21 +11,24 @@
   </header>
   <body id="root">
     <div class="home-container page-container">
-      <h1 class="home-title">Drink Finder</h1>
-      <form class="home-form" name="ingredientInput1" action="" onsubmit="return findRecipes()" method="post">
+      <div class="title-container">
+        <h1 class="home-title">Drink Finder</h1>
+        <h1 class="home-title">Drink Finder</h1>
+      </div>
+
+      <form class="home-form" name="ingredientInput" action="" onsubmit="return findRecipes()">
         <div id="ingredient-inputs" class="input-group home-ingredient-input">
-          <input class="form-control typeahead" type="text" name="ingredient1" placeholder="Ingredient" required>
+          <input class="form-control typeahead" type="text" name="ingredient" placeholder="Ingredient" required>
           <div class="input-group-append">
-            <button class="btn btn-primary" type="submit" name="button" >Search</button>
+            <button class="btn button-style" type="submit" name="button" >Search</button>
           </div>
         </div>
         <div id="additional-ingredient">
-
         </div>
 
         <div class="home-buttons">
-          <button class="btn btn-primary" type="button" name="button" onclick="addInput()">Add</button>
-          <button class="btn btn-primary" type="button" name="button" onclick="findRandom()">Feeling Lucky?</button>
+          <button class="btn button-style" type="button" name="button" onclick="addInput()">Add</button>
+          <button class="btn button-style" type="button" name="button" onclick="findRandom()">Feeling Lucky?</button>
         </div>
       </form>
     </div>
