@@ -12,9 +12,20 @@ function findRecipes(ingredient){
 				const list = document.getElementById("drinkList");
 				let ingredientName = document.createElement("h1");
 				ingredientName.setAttribute("class", "ingredient-title");
+				ingredientName.setAttribute("id", item);
 				ingredientName.innerHTML = item;
 				list.appendChild(ingredientName);
 				list.appendChild( document.createElement("hr"));
+
+				const navbar = document.getElementById("nav-list");
+				let navItem = document.createElement("li");
+				navItem.setAttribute("class", "nav-item")
+				let navLink = document.createElement("a");
+				navLink.setAttribute("class", "nav-link")
+				navLink.setAttribute("href", "#"+item);
+				navLink.innerHTML = item;
+				navItem.appendChild(navLink);
+				navbar.appendChild(navItem);
 
 				if(res.value){
 					const data = JSON.parse(String.fromCharCode.apply(null, res.value));
